@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     EchoWebSocketListener listener;
     MessageAdapter adapter;
     final class EchoWebSocketListener extends WebSocketListener {
-        private static final int NORMAL_CLOSURE_STATUS = 4000;
+//        private static final int NORMAL_CLOSURE_STATUS = 4000;
 //        TextView textView;
 //        ArrayList<String> mesList;
 //        MessageAdapter msgAdapter;
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             JSONObject jsonObject = new JSONObject();
             try {
                 jsonObject.put("command", "register");
-                jsonObject.put("userId", "1");
+                jsonObject.put("userId", "9");
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -121,8 +121,8 @@ public class MainActivity extends AppCompatActivity {
                 JSONObject jsonObject = new JSONObject();
                 try {
                     jsonObject.put("command", "message");
-                    jsonObject.put("from", "1");
-                    jsonObject.put("to", "9");
+                    jsonObject.put("from", "9");
+                    jsonObject.put("to", "1");
                     jsonObject.put("message", messageBox.getText().toString());
                     ws.send(jsonObject.toString());
                     adapter.addItem(new ChattingModel(false,messageBox.getText().toString()));
